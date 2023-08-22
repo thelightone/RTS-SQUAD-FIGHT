@@ -63,8 +63,9 @@ public class SquadController : MonoBehaviour
 
     public void ReceiveDamage(float damage)
     {
-        _curHealth -= _attack - (_attack * _shield / 100);
-        damageEvent.Invoke();
+        _curHealth -= damage - (damage * _shield / 100);
+
+        damageEvent?.Invoke();
 
         if (_curHealth < _healthPerUnit * (_unitList.Count - 1) && _unitList.Count > 1)
         {
@@ -79,9 +80,11 @@ public class SquadController : MonoBehaviour
 
     public void DealDamage()
     {
+        var diff = _attack * 0.2;
+        var hit = Random.Range((float)(_attack - diff), (float)(_attack + diff));
         enemyCurHealth = _enemy._curHealth / _enemy._maxHealth * 100;
 
-        _enemy.ReceiveDamage(_attack);
+        _enemy.ReceiveDamage(hit);
         _skillManager.CheckSkillConditions();
         _performAttack = false;
 

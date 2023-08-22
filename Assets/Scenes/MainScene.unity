@@ -1696,8 +1696,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 50}
+  m_AnchoredPosition: {x: 0, y: -100}
+  m_SizeDelta: {x: 160, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &861327768
 MonoBehaviour:
@@ -8140,18 +8140,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Vikings
       objectReference: {fileID: 0}
-    - target: {fileID: 3497551154642986812, guid: e489f2dfe0bcd8b4e854e42b045de296, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4682141694018838539, guid: e489f2dfe0bcd8b4e854e42b045de296, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4682141694018838539, guid: e489f2dfe0bcd8b4e854e42b045de296, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5229719363983509543, guid: e489f2dfe0bcd8b4e854e42b045de296, type: 3}
       propertyPath: _enemy
       value: 
@@ -8159,18 +8147,6 @@ PrefabInstance:
     - target: {fileID: 7202200800839549320, guid: e489f2dfe0bcd8b4e854e42b045de296, type: 3}
       propertyPath: m_RootOrder
       value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7202200800839549320, guid: e489f2dfe0bcd8b4e854e42b045de296, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.09
-      objectReference: {fileID: 0}
-    - target: {fileID: 7202200800839549320, guid: e489f2dfe0bcd8b4e854e42b045de296, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.09
-      objectReference: {fileID: 0}
-    - target: {fileID: 7202200800839549320, guid: e489f2dfe0bcd8b4e854e42b045de296, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.09
       objectReference: {fileID: 0}
     - target: {fileID: 7202200800839549320, guid: e489f2dfe0bcd8b4e854e42b045de296, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8212,10 +8188,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7202200800839549320, guid: e489f2dfe0bcd8b4e854e42b045de296, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8232,18 +8204,6 @@ PrefabInstance:
     - target: {fileID: 829650919306104942, guid: 6466d5279956c8d46ae89131dd87de0c, type: 3}
       propertyPath: m_RootOrder
       value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 829650919306104942, guid: 6466d5279956c8d46ae89131dd87de0c, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.09
-      objectReference: {fileID: 0}
-    - target: {fileID: 829650919306104942, guid: 6466d5279956c8d46ae89131dd87de0c, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.09
-      objectReference: {fileID: 0}
-    - target: {fileID: 829650919306104942, guid: 6466d5279956c8d46ae89131dd87de0c, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.09
       objectReference: {fileID: 0}
     - target: {fileID: 829650919306104942, guid: 6466d5279956c8d46ae89131dd87de0c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8284,18 +8244,6 @@ PrefabInstance:
     - target: {fileID: 829650919306104942, guid: 6466d5279956c8d46ae89131dd87de0c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 829650919306104942, guid: 6466d5279956c8d46ae89131dd87de0c, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 995760941135923851, guid: 6466d5279956c8d46ae89131dd87de0c, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 995760941135923851, guid: 6466d5279956c8d46ae89131dd87de0c, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3296181358991199455, guid: 6466d5279956c8d46ae89131dd87de0c, type: 3}
       propertyPath: _enemy
