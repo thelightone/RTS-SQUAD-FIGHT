@@ -1,13 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New SkillAttack", menuName = "Skill Attack", order = 51)]
-
 public class SkillAttack : SkillsParent
 {
-    public int [] thresholds = new int[] { 20, 60 };
+    public int[] thresholds = new int[] { 20, 60 };
 
     public override void Activate(GameObject squad)
     {
@@ -21,8 +17,7 @@ public class SkillAttack : SkillsParent
                 unit.transform.Find("Fury").GetComponent<ParticleSystem>().Play();
             }
         }
-
-        squ._curHealth -= squ._curHealth*0.1f;
+        squ._curHealth -= squ._curHealth * 0.1f;
     }
 
     public override bool CheckConditions(GameObject squad)
@@ -32,7 +27,7 @@ public class SkillAttack : SkillsParent
         foreach (var value in thresholds)
         {
             if (ssm.enemyCurHealth < value && ssm.enemyPrevHealth > value)
-                return true;                
+                return true;
         }
         return false;
     }

@@ -1,13 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
-using TMPro.EditorUtilities;
 using UnityEngine;
 
 public class SquadSkillManager : MonoBehaviour
 {
-
     [SerializeField]
     private SkillsParent[] _skills;
+
     public GameObject squad;
 
     private void Awake()

@@ -8,7 +8,7 @@ public class UnitController : MonoBehaviour
     private ParticleSystem _hitParticle;
 
     [SerializeField]
-    private AudioClip [] _hitClip;
+    private AudioClip[] _hitClip;
     [SerializeField]
     private GameObject _weapon;
 

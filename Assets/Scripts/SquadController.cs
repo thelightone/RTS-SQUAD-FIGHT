@@ -1,21 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class SquadController : MonoBehaviour
 {
-    [SerializeField]
-    private SquadConfig _config;
     public SquadController _enemy;
-
     public GameObject[] _units;
-
-    private bool _performAttack;
-    private bool _performedSkill;
-    private SquadSkillManager _skillManager;
 
     [HideInInspector]
     public float _maxHealth;
@@ -27,16 +19,20 @@ public class SquadController : MonoBehaviour
     public float _shield;
     [HideInInspector]
     public float _attackSpeed;
-
-    public static UnityEvent damageEvent = new UnityEvent();
-
+    [HideInInspector]
     public float enemyCurHealth;
+    [HideInInspector]
     public float enemyPrevHealth;
 
-    private float healthPerUnit;
+    [SerializeField]
+    private SquadConfig _config;
+
+    private bool _performAttack;
+    private float _healthPerUnit;
     private List<GameObject> _unitList = new List<GameObject>();
+    private SquadSkillManager _skillManager;
 
-
+    public static UnityEvent damageEvent = new UnityEvent();
 
     private void Awake()
     {
@@ -48,7 +44,8 @@ public class SquadController : MonoBehaviour
 
         _skillManager = GetComponentInChildren<SquadSkillManager>();
 
-        healthPerUnit = _maxHealth / _units.Length;
+        _healthPerUnit = _maxHealth / _units.Length;
+
         _unitList = _units.ToList();
     }
 
@@ -69,7 +66,7 @@ public class SquadController : MonoBehaviour
         _curHealth -= _attack - (_attack * _shield / 100);
         damageEvent.Invoke();
 
-        if (_curHealth < healthPerUnit * (_unitList.Count - 1) && _unitList.Count > 1)
+        if (_curHealth < _healthPerUnit * (_unitList.Count - 1) && _unitList.Count > 1)
         {
             Death();
         }
@@ -90,7 +87,7 @@ public class SquadController : MonoBehaviour
 
         enemyPrevHealth = enemyCurHealth;
 
-        StartCoroutine( EndBattleCheck());
+        StartCoroutine(EndBattleCheck());
     }
 
 
@@ -103,17 +100,14 @@ public class SquadController : MonoBehaviour
     private void Death()
     {
         _unitList[0].gameObject.GetComponent<Animator>().SetTrigger("Death");
-        Debug.Log("2");
         _unitList.Remove(_unitList[0]);
-        Debug.Log("3");
         _units = _unitList.ToArray();
-        Debug.Log("4");
     }
 
     private IEnumerator EndBattleCheck()
     {
         if (_enemy._curHealth <= 0 || _curHealth <= 0)
-        {   
+        {
             gameObject.transform.Find("AttackTrace").GetComponent<ParticleSystem>().Stop();
 
             foreach (var unit in _units)

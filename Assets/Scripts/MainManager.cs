@@ -1,5 +1,3 @@
-
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,6 +5,7 @@ public class MainManager : MonoBehaviour
 {
     [SerializeField]
     private AudioSource _battleSounds;
+
     public static MainManager Instance;
 
     void Awake()
